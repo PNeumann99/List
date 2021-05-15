@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class List<T extends Comparable<T>> {
     private Node<T> head;
     private Node<T> tail;
@@ -9,8 +13,29 @@ public class List<T extends Comparable<T>> {
         this.tail = null;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        boolean keepGoing = true;
+        while(keepGoing){
+            String input = in.readLine();
+            if (input.equals("e")){
+                keepGoing = false;
+            } else if (input.equals("a")){
 
+            } else if (input.equals("i")){
+
+            } else if (input.equals("d")){
+
+            } else if (input.equals("g")){
+
+            } else if (input.equals("r")){
+
+            } else if (input.equals("p")){
+
+            } else {
+                System.out.println("Invalid input! Possible operations:\na(ppend)\ni(nsert)\nd(elete)\ng(et)\nr(everse)\np(rint)\ne(xit)");
+            }
+        }
     }
 
     // ist genau dann true, wenn die Liste leer ist. Laufzeit O(1).
