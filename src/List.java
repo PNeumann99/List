@@ -1,7 +1,4 @@
-
-// Test Test
-
-public class List<T extends Comparable<T> > {
+public class List<T extends Comparable<T>> {
     private Node<T> head;
     private Node<T> tail;
     private int size;
@@ -10,6 +7,10 @@ public class List<T extends Comparable<T> > {
         this.head = null;
         this.size = 0;
         this.tail = null;
+    }
+
+    public static void main(String[] args) {
+
     }
 
     // ist genau dann true, wenn die Liste leer ist. Laufzeit O(1).
@@ -137,9 +138,5 @@ public class List<T extends Comparable<T> > {
             }
         }
         return deleted;
-    }
-
-    public static void main(String[] args){
-
     }
 }
