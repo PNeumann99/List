@@ -1,5 +1,5 @@
 
-// dies ist ein Test
+// Test Test
 
 public class List<T extends Comparable<T> > {
     private Node<T> head;
@@ -137,5 +137,9 @@ public class List<T extends Comparable<T> > {
             }
         }
         return deleted;
+    }
+
+    public static void main(String[] args){
+
     }
 }
