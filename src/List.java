@@ -1,4 +1,6 @@
 
+// dies ist ein Test
+
 public class List<T extends Comparable<T> > {
     private Node<T> head;
     private Node<T> tail;
