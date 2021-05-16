@@ -19,7 +19,7 @@ public class List<T extends Comparable<T>> {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         boolean keepGoing = true;
         System.out.println("Es wurde eine leere Liste erstellt.");
-        while(keepGoing){
+        while (keepGoing) {
             System.out.println("Welche Aktion soll durchgeführt werden?\nEingabe: ");
             String input = in.readLine();
             switch (input) {
@@ -39,21 +39,21 @@ public class List<T extends Comparable<T>> {
                     int data = Integer.parseInt(in.readLine());
                     System.out.println("An welcher Position soll das Element eingefügt werden?\nEingabe: ");
                     int pos = Integer.parseInt(in.readLine());
-                    if(pos == liste.size) liste.append(data);
+                    if (pos == liste.size) liste.append(data);
                     else liste.insert(data, pos);
-                    System.out.println("Ein neues Element mit dem Wert " + data+" wurde an Position "+pos+" in die Liste eingefügt.");
+                    System.out.println("Ein neues Element mit dem Wert " + data + " wurde an Position " + pos + " in die Liste eingefügt.");
                     break;
 
                 case "d":  // delete : Nutzer nach Position fragen und Element löschen
                     System.out.println("Aktion: delete\nAn welcher Position soll das Element gelöscht werden?\n Eingabe: ");
                     pos = Integer.parseInt(in.readLine());
-                    if (pos == liste.size-1) liste.deleteLast();
+                    if (pos == liste.size - 1) liste.deleteLast();
                     else liste.delete(pos);
-                    System.out.println("Das Element an Position "+pos+" wurde gelöscht.");
+                    System.out.println("Das Element an Position " + pos + " wurde gelöscht.");
                     break;
 
                 case "g":  // get : Nutzer nach Position fragen und Wert des Elementes ausgeben
-                    if(!liste.empty()) {
+                    if (!liste.empty()) {
                         System.out.println("Aktion: get\nVon welchem Element (Position in d. Liste) soll der Wert ausgegeben werden?\nEingabe: ");
                         pos = Integer.parseInt(in.readLine());
                         data = liste.get(pos);
@@ -69,7 +69,7 @@ public class List<T extends Comparable<T>> {
                     break;
 
                 case "p":  // print : Liste auf dem Bildschirm ausgeben
-                    System.out.println("Aktion: print\n Die Liste: "+liste.toString());
+                    System.out.println("Aktion: print\n Die Liste: " + liste);
                     break;
 
                 default:
@@ -80,14 +80,14 @@ public class List<T extends Comparable<T>> {
     }
 
     // gibt den Wert des Elementes an Position k zurück.
-    public T get(int k){
+    public T get(int k) {
         Node<T> current = this.head;
         int i = 0;
-        while(current != null && current.next != null && i < k){
+        while (current != null && current.next != null && i < k) {
             current = current.next;
             i++;
         }
-        if(current.next != null) return current.next.data;
+        if (current.next != null) return current.next.data;
         else return null;
     }
 
@@ -122,9 +122,9 @@ public class List<T extends Comparable<T>> {
     }
 
     // fügt ein neues Element mit Wert t an Position k ein.
-    public void insert(T t, int k){
+    public void insert(T t, int k) {
         Node<T> current = this.head;
-        for(int i = 0; i < k; i++){
+        for (int i = 0; i < k; i++) {
             current = current.next;
         }
         Node<T> newElement = new Node<>(t);
