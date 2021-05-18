@@ -2,11 +2,25 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Eine einfache Implementierung einfach verketteter Listen mit generischem Datentyp.
+ * Die Klasse enthält eine main-Methode, welche eine leere verkettete Liste erzeugt und den Nutzer
+ * interaktiv nach verschiedenen Aktionen fragt und diese Durchführt. Als Template-Parameter T wird
+ * der Typ Integer benutzt.
+ * Der Nutzer kann beliebig viele Aktionen hintereinander ausführen, bis er das Programm mit einem exit code beendet.
+ *
+ * @param <T> Der Datentyp der einfach verketteten Liste.
+ * @author akubf
+ */
 public class List<T extends Comparable<T>> {
     private Node<T> head;
     private Node<T> tail;
     private int size;
 
+
+    /**
+     * Erzeugt eine neue, leere, einfach verkettete Liste.
+     */
     public List() {
         this.head = null;
         this.size = 0;
